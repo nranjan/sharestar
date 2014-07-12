@@ -263,7 +263,7 @@ public class Ema7CrossEma21 extends Strategy {
             if ((ema7 > ema21) && (ema7Last < ema21Last)){
                 
                 crossOver.put(symbol,true);
-                log("Crossover " + crossover);
+                log("Crossover " + crossOver);
             } 
             
             // RSI > 40 for all the bars from cross to pullback
@@ -278,13 +278,13 @@ public class Ema7CrossEma21 extends Strategy {
             // The first bar when RSI > 40 after CrossOver happens
             if((rsi40 > 40) && (crossOver.get(symbol) == true) && (rsiPlus40.get(symbol) == false)){
                 rsiPlus40.put(symbol,true);
-                log("RSI+40 " + crossover);
+                log("RSI+40 " + rsiPlus40);
             }
             
             // Negative
             if(!((rsi40Last > 40) && (rsi40 > 40) && (crossOver.get(symbol) == true))){
                 rsiPlus40.put(symbol,false);
-                log("RSI+40 " + crossover);
+                log("RSI+40 " + rsiPlus40);
             }
             
             // First Pullback of price to EMA(21)
@@ -296,7 +296,7 @@ public class Ema7CrossEma21 extends Strategy {
             double prevClose = getData(symbol1 + "lastCo");
             if((data.close.doubleValue() >= ema21) && (prevClose < ema21Last)){
                 pullBack.put(symbol,true);
-                log("Pullback " + pullback);
+                log("Pullback " + pullBack);
             }else{ // Signal only on FIRST pullback
                 pullBack.put(symbol,false);
             }
