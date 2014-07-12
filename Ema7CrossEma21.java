@@ -229,7 +229,7 @@ public class Ema7CrossEma21 extends Strategy {
 	            
 	            //log("Symbol :" + symbol);
 	            //log("YestHi :" + yestHi + " DayBefHi :" + dayBefHi + " YestLo : " + yestLo + " dayBefLo : " + dayBefLo);
-	            //log("Trend Map :" + trend);
+	            log("Trend Map :" + trend);
 	            
 			    if ((yestLo > dayBefLo) && (yestHi > dayBefHi)){
 			        trend.put(symbol,"UP");
