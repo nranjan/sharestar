@@ -229,7 +229,7 @@ public class Ema7CrossEma21 extends Strategy {
 	            
 	            //log("Symbol :" + symbol);
 	            //log("YestHi :" + yestHi + " DayBefHi :" + dayBefHi + " YestLo : " + yestLo + " dayBefLo : " + dayBefLo);
-	            log("Trend Map :" + trend);
+	            
 	            
 			    if ((yestLo > dayBefLo) && (yestHi > dayBefHi)){
 			        trend.put(symbol,"UP");
@@ -239,6 +239,7 @@ public class Ema7CrossEma21 extends Strategy {
 			        trend.put(symbol,"SIDEWAYS");
 			    }
 			}
+			log("Trend Map :" + trend);
         }
         
         private String getTrend(String symbol){
