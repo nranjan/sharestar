@@ -287,6 +287,7 @@ public class Ema7CrossEma21 extends Strategy {
             // Negative
             if(!((rsi40Last > 40) && (rsi40 > 40) && (crossOver.get(symbol) == true))){
                 rsiPlus40.put(symbol,false);
+                crossover.put(symbol,false);
                 log("RSI+40 " + rsiPlus40);
             }
             
