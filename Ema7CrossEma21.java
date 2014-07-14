@@ -121,9 +121,12 @@ public class Ema7CrossEma21 extends Strategy {
                 String symbol = fullSymbol.substring(0,fullSymbol.lastIndexOf("-"));
                 
                 evaluatePivots(data,symbol);
-                evaluateConditions(data,symbol);
+                
                 
                 if(data.streamName == "hourly"){
+                    
+                    evaluateConditions(data,symbol);
+                    
                     // NIFTY is UP, Symbol is UP
                     if(getTrend("NIFTY").equals(" UP")){
                     	if(getTrend(symbol).equals(" UP")){
@@ -293,7 +296,7 @@ public class Ema7CrossEma21 extends Strategy {
                 pullBack.put(symbol,false);
             }
             
-            double prevClose = getData(symbol1 + "lastCo");
+            double prevClose = getData(symbol1 + "lastCl");
             if((data.close.doubleValue() >= ema21) && (prevClose < ema21Last)){
                 pullBack.put(symbol,true);
                 log("Pullback " + pullBack);
